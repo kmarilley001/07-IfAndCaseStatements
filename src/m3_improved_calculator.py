@@ -1,5 +1,5 @@
 ###############################################################################
-# TODO: 1. (4 pts)
+# DONE: 1. (4 pts)
 #
 #   In this module, we will improve upon the calculator that we built in the
 #   Session 5 coding exercises.
@@ -39,9 +39,38 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def add(x, y): 
+    return x + y 
+def subtract (x,y): 
+    return x - y 
+def multiply(x,y): 
+    return x * y 
+def divide(x,y): 
+    if y != 0: 
+        return x/y 
+    else: 
+        return "Cannot divide by zero!"
+def if_calc(): 
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Emter the second number: "))
+    operation = input("Choose an operation (+,-,*,/): ")
+    if operation == '+':
+        result = add(num1, num2)
+    elif operation == '-':
+        result = subtract(num1, num2)
+    elif operation == '*':
+        result = multiply(num1, num2)
+    elif operation == '/':
+        result = divide(num1, num2)
+    else:
+        result = "Invalid Operation!"
+    print("Result:", result)
+if_calc()
+
+
 
 ###############################################################################
-# TODO: 2. (4 pts)
+# DONE: 2. (4 pts)
 #
 #   Now, do the same thing that you did in _TODO_ 1, but this time, use case
 #   statements in your solution instead of if statements.
@@ -51,3 +80,34 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def add(x,y):
+    return x + y 
+def subtract(x,y):
+    return x - y
+def multiply(x,y): 
+    return x * y 
+def divide(x,y): 
+    if y != 0: 
+        return x/y
+    else: 
+        return "Cannot divide by zero!"
+def case_calc(): 
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+    operation = input("Choose an operation (+,-,*,/): ")
+    result = None 
+    if operation in ('+','-','*','/'): 
+         case_switch = {
+            '+': add(num1, num2),
+            '-': subtract(num1, num2),
+            '*': multiply(num1, num2),
+            '/': divide(num1, num2),
+        }
+         result = case_switch[operation]
+    else: 
+        result = "Invalid Operation!"
+    print("Result", result)
+
+case_calc()
+
+
