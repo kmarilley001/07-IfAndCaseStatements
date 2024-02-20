@@ -17,23 +17,20 @@
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
 def color_picker(): 
-    color = input("Enter a color: ")
-    print("")
-    match color: 
-        case "blue": 
-            print("Success! You picked blue.")
-        case "purple": 
-            print("Success! You picked purple.")
-        case "green" : 
-            print("Success! You picked green.")
-        case "aquamarine" :
-            print("Success! You picked aquamarine.")
-        case "black": 
-            print("Success! You picked black.")
-        case _:
-            print("Unknown Color!")
+    user_color = input("Enter the name of a color: ")
+    if user_color.lower() == "red":
+        print("Success! You picked red.")
+    elif user_color.lower() == "blue": 
+        print("Success! You picked blue!") 
+    elif user_color.lower() == "green":
+        print("Success! You picked green.")
+    elif user_color.lower() == "yellow":
+        print("Success! You picked yellow.")
+    elif user_color.lower() == "purple":
+        print("Success! You picked purple.")
+    else:
+         print("Unknown Color!")
 color_picker()
-
 
 ###############################################################################
 # DONE: 2. (3 pts)
@@ -54,24 +51,25 @@ color_picker()
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def calculate_grade(percentage):
+    if 0.9 <= percentage <= 1.0: 
+        return "A" 
+    elif 0.8 <= percentage <0.9: 
+        return "B" 
+    elif 0.7 <= percentage < 0.8: 
+        return "C"
+    elif 0.6 <= percentage < 0.7: 
+        return "D"
+    elif 0 <= percentage < 0.6: 
+        return "F" 
+    else: 
+        return "Invalid Score!"
+    
 def grade(): 
-    grade = float(input("What's your grade?"))
-    match grade: 
-        case _ if 0.9 <= grade <= 1.0: 
-            print("You received a(n) A.")
-        case _ if 0.9 >=  grade >=  0.85: 
-            print("You received a(n) B")
-        case _ if 0.85 >= grade >=  0.72: 
-            print("You received a(n) C.")
-        case _ if  0.7 >= grade >= 0.65: 
-            print("You receiced a(n) D.")
-        case _ if  0.65 >= grade >= 0.60: 
-            print("You received a F.")
-        case _:
-            print("Invalid Score")
+    user_percentage = float(input("Enter your percentage (as a decimal): fe"))
+    result = calculate_grade(user_percentage)
+    print("Your received a(n)" + result + ".")
 
 grade()
-
-   
-
-
+                            
+    

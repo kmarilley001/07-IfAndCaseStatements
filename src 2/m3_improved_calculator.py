@@ -53,8 +53,6 @@ def divide(x,y):
 def if_calc(): 
     num1 = float(input("Enter the first number: "))
     num2 = float(input("Emter the second number: "))
-    print()
-    print("(+) Add\n(-) Subtract\n(*) Multiply\n(/) Division")
     operation = input("Choose an operation (+,-,*,/): ")
     if operation == '+':
         result = add(num1, num2)
@@ -94,25 +92,22 @@ def divide(x,y):
     else: 
         return "Cannot divide by zero!"
 def case_calc(): 
-    x = float(input("Enter the first number: "))
-    y = float(input("Enter the second number: "))
-    print("(+) Add\n(-) Subtract\n(*) Multiply\n(/) Division")
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
     operation = input("Choose an operation (+,-,*,/): ")
-    match operation: 
-        case "+":
-            print("result:",add(x, y))
-        case "-":
-            print("result:", subtract(x,y))
-        case "*":
-            print("result:", multiply(x,y))
-        case "/":
-            print("result:", divide(x,y))
-        case _: 
-            print("result:", "Invalid Operation!")     
-   
-    print("Thank you for using me today!")
+    result = None 
+    if operation in ('+','-','*','/'): 
+         case_switch = {
+            '+': add(num1, num2),
+            '-': subtract(num1, num2),
+            '*': multiply(num1, num2),
+            '/': divide(num1, num2),
+        }
+         result = case_switch[operation]
+    else: 
+        result = "Invalid Operation!"
+    print("Result", result)
 
 case_calc()
-
 
 

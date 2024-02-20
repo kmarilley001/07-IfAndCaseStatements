@@ -91,19 +91,19 @@ print(result)
 ###############################################################################
 def display_rating(rating):
     if 4 <= rating <= 5:
-        print(f"Congratulations! You received a score of {rating}!")
+        print(f"Congratulations! You received a score of {rating:.1f}!")
     elif 3 <= rating < 4:
-        print(f"Good job! You received a score of {rating}. Keep it up!")
+        print(f"Good job! You received a score of {rating:.1f}. Keep it up!")
     elif 2 <= rating < 3:
-        print(f"You're making progress. You received a score of {rating}.")
+        print(f"You're making progress. You received a score of {rating:.1f}.")
     elif 1 <= rating < 2:
-        print(f"You could use some improvement. You received a score of {rating}.")
+        print(f"You could use some improvement. You received a score of {rating:.1f}.")
     else:
         print("Invalid score given.")
 
-display_rating(4)
-display_rating(1)
-display_rating(3)
-display_rating(2)
-display_rating(5)
-display_rating(4)
+display_rating(4.8)
+display_rating(1.2)
+display_rating(3.5)
+display_rating(2.2)
+display_rating(5.5)
+display_rating(0.5)
